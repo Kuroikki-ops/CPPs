@@ -33,15 +33,15 @@ CIAN		= \033[36m
 
 all: $(NAME)
 
-# Compilacion miniHell
+# Compilaction
 $(NAME): $(OBJS)
 	$(CPP) $(CPPLAGS) $(OBJS) -o $(NAME)
 
-# Compilacion de *.c en *.o && *.d
+# Pre-compilation (*.o && *.d)
 %.o: %.cpp Makefile
 	$(CPP) $(CPPFLAGS) -MMD -MP -c $< -o $@
 
-# Incluye dependecies .d
+# Include dependecies (.d)
 -include $(DEPS)
 
 clean:
