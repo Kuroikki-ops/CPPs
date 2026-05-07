@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 14:29:21 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/07 18:29:18 by diespino         ###   ########.fr       */
+/*   Created: 2026/05/07 16:45:21 by diespino          #+#    #+#             */
+/*   Updated: 2026/05/07 19:21:42 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include "Zombie.hpp"
 
 int	main(void)
 {
-	Zombie	*zombieHeap = newZombie("BOB");
+	Zombie		*zombies;
+	const int	zNum = 10;
 
-	zombieHeap->announce();
-	randomChump("DYLAN");
-	delete zombieHeap;	
+	zombies = zombieHorde(zNum, "Larry");
+	for (int i = 0; i < zNum; i++)
+		zombies[i].announce();
+	delete[] zombies;
 	return (0);
 }
