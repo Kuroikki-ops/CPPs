@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 17:07:18 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/14 17:07:24 by diespino         ###   ########.fr       */
+/*   Created: 2026/05/14 14:14:55 by diespino          #+#    #+#             */
+/*   Updated: 2026/05/14 16:56:49 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
-#include "Weapon.hpp"
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-HumanB::HumanB(const std::string& name) : _name(name), _weapon(NULL) {}
-HumanB::~HumanB(void) {}
+int	main(void)
+{
+	Harl		harl;
+	std::string	level[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-void	HumanB::attack(void) const {
-
-	if (!_weapon)
-		std::cout << _name << " attacks with their bare hands" << std::endl;
-	else
-		std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
-}
-
-void	HumanB::setWeapon(Weapon& weapon) {
-
-	_weapon = &weapon;
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << level[i] << ": ";
+		harl.complain(level[i]);
+	}
+	return (EXIT_SUCCESS);
 }
