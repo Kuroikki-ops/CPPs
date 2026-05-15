@@ -28,19 +28,11 @@ CPP	 	= g++
 CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
 RM 		=  rm -f
 
-# Colors ANSI 	  \033[<color;estilo_letra>\033[0m
-END 		= \033[0m
-RED		= \033[31;1m
-GREEN		= \033[32;1m
-YELLOW		= \033[33;1m
-MAGENTA		= \033[35;1m
-CIAN		= \033[36m
-
 all: $(NAME)
 
 # Compilation
 $(NAME): $(OBJS)
-	$(CPP) $(CPPLAGS) $(OBJS) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 # Pre-compilation (*.o && *.d)
 %.o: %.cpp Makefile

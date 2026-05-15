@@ -32,7 +32,7 @@ all: $(NAME)
 
 # Compilation
 $(NAME): $(OBJS)
-	$(CPP) $(CPPLAGS) $(OBJS) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 # Pre-compilation (*.o && *.d)
 %.o: %.cpp Makefile

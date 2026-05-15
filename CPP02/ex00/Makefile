@@ -6,17 +6,17 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 16:08:48 by diespino          #+#    #+#              #
-#    Updated: 2026/05/14 17:03:13 by diespino         ###   ########.fr        #
+#    Updated: 2026/05/15 15:33:53 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output NAME
-NAME 		= Harl
+NAME 		= fixed_point
 
 # SRCs
 MAIN		= main.cpp
 
-SRC		= Harl.cpp
+SRC		= Fixed.cpp
 
 OBJS		= $(MAIN:.cpp=.o) $(SRC:.cpp=.o)
 DEPS		= $(MAIN:.cpp=.d) $(SRC:.cpp=.d)
