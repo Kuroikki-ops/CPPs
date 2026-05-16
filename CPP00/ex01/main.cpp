@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 12:52:13 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/06 15:28:05 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/16 16:03:32 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(void)
 	std::cout << "	  CMD: [ADD] [SEARCH] [EXIT]\n" << std::endl;
 	while (true)
 	{
-		std::cout << " Please, enter command: ";// << std::endl;
+		std::cout << " Please, enter command: ";
 		std::getline (std::cin, input);
 		if (!input.compare("ADD"))
 		{

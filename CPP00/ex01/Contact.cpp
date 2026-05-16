@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 12:52:08 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/06 14:00:34 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/16 17:51:45 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,72 +18,15 @@
 Contact::Contact(){}
 Contact::~Contact(){}
 
-std::string	Contact::getFirstName(void) const
-{
-	std::string	str;
+std::string	Contact::getFirstName(void) const {return (_FirstName);}
 
-	if (_FirstName.size() > 9)
-	{
-		str = _FirstName.substr(0,9);
-		str.push_back('.');
-		return (str);
-	}
-//	else
-//	{
-//		str.append(_FirstName);
-//		while (str.size() < 9)
-//			str.push_back(' ');
-//	}
-	return (_FirstName);
-}
+std::string	Contact::getLastName(void) const {return (_LastName);}
 
-std::string	Contact::getLastName(void) const
-{
-	std::string	str;
+std::string	Contact::getNickName(void) const {return (_NickName);}
 
-	if (_LastName.size() > 9)
-	{
-		str = _LastName.substr(0,9);
-		str.push_back('.');
-		return (str);
-	}
-//	else
-//	{
-//		str.append(_LastName);
-//		while (str.size() < 9)
-//			str.push_back(' ');
-//	}
-	return (_LastName);
-}
+std::string	Contact::getPhoneNum(void) const {return (_PhoneNum);}
 
-std::string	Contact::getNickName(void) const
-{
-	std::string	str;
-
-	if (_NickName.size() > 9)
-	{
-		str = _NickName.substr(0,9);
-		str.push_back('.');
-		return (str);
-	}
-//	else
-//	{
-//		str.append(_NickName);
-//		while (str.size() < 9)
-//			str.push_back(' ');
-//	}
-	return (_NickName);
-}
-/*
-std::string	Contact::getPhoneNum(void) const
-{
-	return (_PhoneNum);
-}
-
-std::string	Contact::getSecret(void) const
-{
-	return (_Secret);
-}*/
+std::string	Contact::getSecret(void) const {return (_Secret);}
 
 bool	Contact::setContact(void)
 {

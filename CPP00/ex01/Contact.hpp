@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 12:52:00 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/05 17:03:10 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/16 17:41:08 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class	Contact {
 		std::string	getFirstName(void) const;
 		std::string	getLastName(void) const;
 		std::string	getNickName(void) const;
-//		std::string	getPhoneNum(void) const;
-//		std::string	getSecret(void) const;
+		std::string	getPhoneNum(void) const;
+		std::string	getSecret(void) const;
 
 		bool	setContact(void);
 };
