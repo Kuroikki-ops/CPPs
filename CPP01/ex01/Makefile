@@ -6,12 +6,12 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 16:08:48 by diespino          #+#    #+#              #
-#    Updated: 2026/05/07 19:35:32 by diespino         ###   ########.fr        #
+#    Updated: 2026/05/18 13:58:51 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output NAME
-NAME 		= Horde
+NAME 		= zombie_horde
 
 # SRCs
 MAIN		= main.cpp

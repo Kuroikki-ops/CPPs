@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 14:30:41 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/08 15:09:57 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 14:19:49 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class	HumanB {
 		Weapon*		_weapon;
 
 	public:
+		HumanB(void);
 		HumanB(const std::string& name);
 		~HumanB(void);
 

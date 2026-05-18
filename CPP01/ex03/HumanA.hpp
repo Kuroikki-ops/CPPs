@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 14:30:41 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/08 15:17:35 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 14:18:40 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class	HumanA {
 		Weapon&		_weapon;
 
 	public:
-		HumanA(void);
 		HumanA(const std::string& name, Weapon& weapon);
 		~HumanA(void);
 

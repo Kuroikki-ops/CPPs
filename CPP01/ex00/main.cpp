@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:29:21 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/07 18:29:18 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:23:28 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 int	main(void)
 {
 	Zombie	*zombieHeap = newZombie("BOB");
-
 	zombieHeap->announce();
+	
 	randomChump("DYLAN");
+
 	delete zombieHeap;	
 	return (0);
 }

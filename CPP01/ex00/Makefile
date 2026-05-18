@@ -6,12 +6,12 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 16:08:48 by diespino          #+#    #+#              #
-#    Updated: 2026/05/07 16:08:53 by diespino         ###   ########.fr        #
+#    Updated: 2026/05/18 14:01:15 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output NAME
-NAME = BraiiiiiiinnnzzzZ
+NAME = braiiiiiiinnnzzzz
 
 # SRCs
 MAIN		= main.cpp

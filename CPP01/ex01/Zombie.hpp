@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:19:26 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/07 19:35:01 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:34:19 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Zombie {
 		~Zombie(void);
 
 		void	announce(void);
-		void	setName(std::string);
+		void	setName(std::string, int indx);
 };
 
 Zombie*	zombieHorde(int N, std::string name);

@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 17:08:18 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/14 17:08:34 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 14:54:38 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@
 
 void	str_replace(std::ifstream& in, std::ofstream& out, std::string str1, std::string str2)
 {
-	std::cout << "str_replace" << std::endl;
-	
 	std::string	line;
 	std::string	new_line;
 	std::size_t	found;
 
-	std::getline(in, line);
-	while (in.good()) 
+	while (std::getline(in, line)) 
 	{
 		found = line.find(str1);
 		while (found != std::string::npos)
@@ -37,13 +34,12 @@ void	str_replace(std::ifstream& in, std::ofstream& out, std::string str1, std::s
 			found = line.find(str1, found + str2.length());
 		}
 		out << line << std::endl;
-		getline(in, line);
 	}
 }
 
 int main (int argc, char **argv)
 {
-	if (argc != 4 || !argv || !argv[1][0] || !argv[2][0] || !argv[3][0])
+	if (argc != 4 || !argv[1][0] || !argv[2][0] || !argv[3][0])
 	{
 		std::cout << "Input error: <file> <s1> <s2>" << std::endl;
 		return (EXIT_FAILURE);

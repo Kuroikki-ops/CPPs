@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 13:30:09 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/14 16:53:04 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 15:07:08 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class	Harl {
 		~Harl(void);
 		
 		void	complain(std::string level);	
-		void (Harl::*funtion)(void);
+		void	(Harl::*funtion)(void);
 };
 
 #endif

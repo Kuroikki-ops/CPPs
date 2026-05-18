@@ -6,12 +6,12 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 16:08:48 by diespino          #+#    #+#              #
-#    Updated: 2026/05/07 19:35:32 by diespino         ###   ########.fr        #
+#    Updated: 2026/05/18 14:33:11 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output NAME
-NAME 		= Sed_is_for_losers
+NAME 		= search_n_replace
 
 # SRCs
 MAIN		= main.cpp

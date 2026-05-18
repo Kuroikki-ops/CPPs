@@ -6,12 +6,12 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/08 12:52:04 by diespino          #+#    #+#              #
-#    Updated: 2026/05/08 13:16:00 by diespino         ###   ########.fr        #
+#    Updated: 2026/05/18 14:04:55 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # OUTPUT NAME
-NAME		= brain
+NAME		= hi_brain
 
 # SRC
 MAIN		= main.cpp

@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:19:26 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/07 15:42:58 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:19:21 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class	Zombie {
 		std::string	_name;
 	
 	public:
+		Zombie(void);
 		Zombie(std::string name);
 		~Zombie(void);
 

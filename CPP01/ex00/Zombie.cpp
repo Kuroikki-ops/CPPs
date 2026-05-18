@@ -6,18 +6,17 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:32:29 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/07 15:52:43 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:20:28 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name) : _name(name) {}
-Zombie::~Zombie() {
+Zombie::Zombie() {}
+Zombie::~Zombie() {std::cout << _name << ": has been destroyed" << std::endl;}
 
-	std::cout << _name << ": has been destroyed" << std::endl;
-}
+Zombie::Zombie(std::string name) : _name(name) {}
 
 void	Zombie::announce(void)
 {

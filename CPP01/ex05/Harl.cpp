@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 13:34:42 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/14 17:01:10 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 15:19:30 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include <string>
 #include "Harl.hpp"
 
-Harl::Harl(void) {}
-Harl::~Harl(void) {}
+Harl::Harl() {}
+Harl::~Harl() {}
 
 void	Harl::debug(void)
 {
@@ -43,11 +43,7 @@ void	Harl::complain(std::string level)
 	void (Harl::*function[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	int	i = 0;
-	while (i < 4)
-	{
-		if (lvl[i] == level)
-			break ;
+	while (lvl[i] != level)
 		i++;
-	}
 	(this->*function[i])();
 }

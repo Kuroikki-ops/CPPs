@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 14:31:24 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/14 17:07:45 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/18 14:10:24 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	Weapon {
 		~Weapon(void);
 
 		const std::string&	getType(void) const;
-		void				setType(const std::string& type);
+		void			setType(const std::string& type);
 };
 
 #endif
