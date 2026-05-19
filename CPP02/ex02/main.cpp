@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 14:25:52 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/15 18:00:38 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:56:35 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int	main(void)
 {
-	Fixed		a;
-	Fixed const	b(Fixed(5.05f) * Fixed(2));
+	Fixed		a(2);
+	Fixed const	b(3);//(Fixed(5.05f) * Fixed(2));
 
-	std::cout << a << std::endl;
+/*	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
@@ -27,6 +27,23 @@ int	main(void)
 	std::cout << b << std::endl;
 
 	std::cout << Fixed::max(a, b) << std::endl;
+*/
+	std::cout << "\nA[" << a << "] " << "B[" << b << "]" << std::endl;
 
+	std::cout << "\n(A > B)  | True[1] or False[0]: " << (a > b);
+	std::cout << "\n(A < B)  | True[1] or False[0]: " << (a < b) << std::endl;
+	std::cout << "\n(A >= B) | True[1] or False[0]: " << (a >= b);
+	std::cout << "\n(A <= B) | True[1] or False[0]: " << (a <= b) << std::endl;
+	std::cout << "\n(A == B) | True[1] or False[0]: " << (a == b);
+	std::cout << "\n(A != B) | True[1] or False[0]: " << (a != b) << std::endl;
+
+	std::cout << "\n\nA[" << a << "] " << "B[" << b << "]" << std::endl;
+
+	std::cout << "\n(A + B) = " << (a + b);
+	std::cout << "\n(A - B) = " << (a - b);
+	std::cout << "\n(A * B) = " << (a * b);
+	std::cout << "\n(A / B) = " << (a / b);
+
+	std::cout << std::endl;
 	return (0);
 }
