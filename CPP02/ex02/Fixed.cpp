@@ -136,3 +136,15 @@ Fixed    Fixed::operator/(const Fixed& other)
 	result.setRawBits((this->_fixpoint << _fractbits) / other._fixpoint);
 	return (result);
 }
+
+Fixed&    Fixed::operator++(void)
+{
+	_fixpoint += 1;
+	return (*this);
+}
+
+Fixed&    Fixed::operator--(void)
+{
+	_fixpoint -= 1;
+	return (*this);
+}

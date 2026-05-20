@@ -52,8 +52,8 @@ class	Fixed {
 		Fixed	operator/(const Fixed& other);
 
 		// Increment && Decrement Operators
-//		Fixed&	operator++(const Fixed& other);
-//		Fixed&	operator--(const Fixed& other);
+		Fixed&	operator++(void);
+		Fixed&	operator--(void);
 
 		// Min/Max
 

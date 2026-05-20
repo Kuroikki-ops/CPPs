@@ -18,31 +18,33 @@ int	main(void)
 	Fixed		a(2);
 	Fixed const	b(3);//(Fixed(5.05f) * Fixed(2));
 
-/*	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	
-	std::cout << b << std::endl;
+/*	std::cout << b << std::endl;
 
 	std::cout << Fixed::max(a, b) << std::endl;
 */
-	std::cout << "\nA[" << a << "] " << "B[" << b << "]" << std::endl;
+	std::cout << "\n == A[" << a << "] " << "B[" << b << "] ==" << std::endl;
 
-	std::cout << "\n(A > B)  | True[1] or False[0]: " << (a > b);
-	std::cout << "\n(A < B)  | True[1] or False[0]: " << (a < b) << std::endl;
-	std::cout << "\n(A >= B) | True[1] or False[0]: " << (a >= b);
-	std::cout << "\n(A <= B) | True[1] or False[0]: " << (a <= b) << std::endl;
-	std::cout << "\n(A == B) | True[1] or False[0]: " << (a == b);
-	std::cout << "\n(A != B) | True[1] or False[0]: " << (a != b) << std::endl;
+	std::cout << "\n > (A > B)  | True[1] or False[0]: " << (a > b);
+	std::cout << "\n > (A < B)  | True[1] or False[0]: " << (a < b) << std::endl;
+	std::cout << "\n > (A >= B) | True[1] or False[0]: " << (a >= b);
+	std::cout << "\n > (A <= B) | True[1] or False[0]: " << (a <= b) << std::endl;
+	std::cout << "\n > (A == B) | True[1] or False[0]: " << (a == b);
+	std::cout << "\n > (A != B) | True[1] or False[0]: " << (a != b) << std::endl;
 
-	std::cout << "\n\nA[" << a << "] " << "B[" << b << "]" << std::endl;
+	std::cout << "\n == A[" << a << "] " << "B[" << b << "] ==" << std::endl;
 
-	std::cout << "\n(A + B) = " << (a + b);
-	std::cout << "\n(A - B) = " << (a - b);
-	std::cout << "\n(A * B) = " << (a * b);
-	std::cout << "\n(A / B) = " << (a / b);
+	std::cout << "\n > (A + B) = " << (a + b);
+	std::cout << "\n > (A - B) = " << (a - b);
+	std::cout << "\n > (A * B) = " << (a * b);
+	std::cout << "\n > (A / B) = " << (a / b) << std::endl;
+
+	std::cout << "\n == A[" << a << "] " << "B[" << b << "] ==" << std::endl;
+
+	std::cout << "\n > (++A) = " << ++a << a << std::endl;
+//	std::cout << "\n > (A++) = " << a++ << a << std::endl;
+	
+	std::cout << "\n > (--A) = " << --a << a << std::endl;
+//	std::cout << "\n > (A--) = " << a-- << a << std::endl;
 
 	std::cout << std::endl;
 	return (0);
