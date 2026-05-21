@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 13:20:50 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/15 15:30:34 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/21 12:23:34 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ Fixed& Fixed::operator=(const Fixed& other)
 
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
-	{
 		_fixpoint = other._fixpoint;
-	}
 	return (*this);
 }
 

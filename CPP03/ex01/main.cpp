@@ -6,23 +6,27 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 12:25:24 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/21 12:25:33 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/21 16:07:47 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include <iostream>
+#include <string>
+
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap	robot("Larry");
+	ScavTrap	robot("Bob");
 
-	robot.attack("Bullymong");
-	robot.takeDamage(5);
+	robot.attack("Psycho");
+	robot.takeDamage(10);
+	robot.guardGate();
 	robot.beRepaired(5);
 
-	robot.attack("King Mong");
+	robot.attack("Suicide Psycho");
 	robot.takeDamage(15);
-	robot.attack("King Mong");
+	robot.attack("Suicide Psycho");
 	robot.beRepaired(5);
 
 	return (0);
