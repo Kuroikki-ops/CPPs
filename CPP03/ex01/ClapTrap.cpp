@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 12:25:13 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/21 16:12:40 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/22 13:57:25 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ClapTrap::attack(const std::string& target)
 	if (_energy > 0 && _hit > 0)
 	{
 		_energy -= 1;
-		std::cout << "  > [ClapTrap]: " << _name << " attacks " << target << ", causing [" << _damage << "] points of damge!" << std::endl;
+		std::cout << "  > [ClapTrap]: " << _name << " attacks " << target << ", dealing [" << _damage << "] points of damage!" << std::endl;
 		return ;
 	}
 	if (_hit <= 0)
@@ -68,7 +68,9 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (_hit > 0)
 	{
 		_hit -= amount;
-		std::cout << "  > [ClapTrap]: " << _name << " takes [" << amount << "] points of damge!"<< std::endl;
+		if (_hit < 0)
+			_hit = 0;
+		std::cout << "  > [ClapTrap]: " << _name << " takes [" << amount << "] points of damage!"<< std::endl;
 		std::cout << "  >>[ STATUS ]: " << _name << " == HP[" << _hit << "] ENERGY[" << _energy << "] ==\n" << std::endl;
 		return ;
 	}
@@ -81,7 +83,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		_energy -= 1;
 		_hit += amount;
-		std::cout << "  > [ClapTrap]: " << _name << " has repaired by him self!! Has win [" << amount <<"] hit points!"<< std::endl;
+		std::cout << "  > [ClapTrap]: " << _name << " repairs himself!! And recovers [" << amount <<"] hit points!"<< std::endl;
 		std::cout << "  >>[ STATUS ]: " << _name << " == HP[" << _hit << "] ENERGY[" << _energy << "] ==\n" << std::endl;
 		return ;
 	}

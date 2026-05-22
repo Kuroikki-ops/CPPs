@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 12:25:13 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/22 14:01:54 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/22 13:54:48 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 ClapTrap::ClapTrap(void) : _name("Default_ClapTrap"), _hit(10), _energy(10), _damage(0) {
 
-	std::cout << "\n  <! Default ClapTrap constructor called: [" << _name << "] has been created !>\n\n" << std::endl;
+	std::cout << "\n  <! Default ClapTrap constructor called: [" << _name << "] has been created !>" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _damage(0) {
 
-	std::cout << "\n  <! ClapTrap constructor called: [" << _name << "] has been created !>\n\n" << std::endl;
+	std::cout << "\n  <! ClapTrap constructor called: [" << _name << "] has been created !>" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) 
@@ -46,7 +46,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 ClapTrap::~ClapTrap() {
 
-	std::cout << "\n\n  <! ClapTrap destructor called: [" << _name << "] has been destroyed !>\n" << std::endl;
+	std::cout << "  <! ClapTrap destructor called: [" << _name << "] has been destroyed !>\n" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
@@ -70,7 +70,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		_hit -= amount;
 		if (_hit < 0)
 			_hit = 0;
-		std::cout << "  > [ClapTrap]: " << _name << " takes [" << amount << "] points of damage!"<< std::endl;
+		std::cout << "  > [ClapTrap]: " << _name << " takes [" << amount << "] points of damge!"<< std::endl;
 		std::cout << "  >>[ STATUS ]: " << _name << " == HP[" << _hit << "] ENERGY[" << _energy << "] ==\n" << std::endl;
 		return ;
 	}

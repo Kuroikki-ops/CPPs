@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 14:38:00 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/22 13:56:50 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/22 13:51:15 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ScavTrap::attack(const std::string& target)
 	if (_energy > 0 && _hit > 0)
 	{
 		_energy -= 1;
-		std::cout << "  > [ScavTrap]: " << _name << " attacks " << target << ", dealing [" << _damage << "] points of pure emotional damage!" << std::endl;
+		std::cout << "  > [ScavTrap]: " << _name << " attacks " << target << ", dealing [" << _damage << "] points of pure emotional damge!" << std::endl;
 		return ;
 	}
 	if (_hit <= 0)
