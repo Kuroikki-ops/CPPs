@@ -1,53 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:45:19 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/25 15:12:09 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/22 17:04:27 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog(void) : Animal() {
+WrongCat::WrongCat(void) : WrongAnimal() {
 
-	std::cout << "== [Dog] constructor called ==" << std::endl;
-	type = "Dog";
-	_brain = new Brain();
+	std::cout << "== [WrongCat] constructor called ==" << std::endl;
+	type = "WrongCat";
 }
 
-Dog::Dog(const Dog& other) : Animal(other) {
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {
 
-	std::cout << "== [Dog] copy constructor called ==" << std::endl;
-	_brain = new Brain(*other._brain);
+	std::cout << "< WrongCat copy constructor called >" << std::endl;
 }
 
-Dog& Dog::operator=(const Dog& other) {
+WrongCat& WrongCat::operator=(const WrongCat& other) {
 
-	std::cout << "== [Dog] copy assignment called ==" << std::endl;
+	std::cout << "< WrongCat copy assignment called >" << std::endl;
 
 	if (this != &other)
-	{
-		Animal::operator=(other);
-		delete _brain;
-		_brain = new Brain(*other._brain);
-	}
+		WrongAnimal::operator=(other);
 	return (*this);
 }
 
-Dog::~Dog(void) {
+WrongCat::~WrongCat(void) {
 
-	std::cout << "== [Dog] destructor called ==" << std::endl;
-	delete _brain;
+	std::cout << "== [WrongCat] destructor called ==" << std::endl;
 }
 
-void	Dog::makeSound(void) const {
+void	WrongCat::makeSound(void) const {
 
-	std::cout << "* Dog sound *" << std::endl;
+	std::cout << "* WrongCat sound *" << std::endl;
 }

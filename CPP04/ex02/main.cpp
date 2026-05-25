@@ -6,13 +6,13 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:33:54 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/25 16:37:10 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/25 15:42:09 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
@@ -20,7 +20,7 @@
 int	main(void)
 {
 	int		num = 10;
-	const Animal*	animals[num];
+	const AAnimal*	animals[num];
 
 	std::cout << std::endl;	
 	std::cout << "---- Construct ANIMALS ----\n"<< std::endl;
@@ -57,12 +57,10 @@ int	main(void)
 	}
 
 	std::cout << "---- Basic test ----\n"<< std::endl;
-	const Animal	a;
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
+	const AAnimal*	j = new Dog();
+	const AAnimal*	i = new Cat();
 
 	std::cout << std::endl;
-	a.makeSound();
 	j->makeSound();
 	i->makeSound();
 	std::cout << std::endl;
@@ -84,5 +82,8 @@ int	main(void)
 	dog3 = dog1;
 	std::cout << std::endl;
 
+/*	std::cout << "---- Abstract test ----\n"<< std::endl;
+	const AAnimal	a;
+	const AAnimal*	b = new AAnimal();*/
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 16:08:48 by diespino          #+#    #+#              #
-#    Updated: 2026/05/25 14:28:54 by diespino         ###   ########.fr        #
+#    Updated: 2026/05/25 15:28:38 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME 		= Animal_brain
 # SRCs
 MAIN		= main.cpp
 
-SRC		= Animal.cpp\
+SRC		= AAnimal.cpp\
 		  Brain.cpp\
 		  Dog.cpp\
 		  Cat.cpp
