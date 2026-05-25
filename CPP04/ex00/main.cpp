@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:33:54 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/22 17:05:49 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/25 16:43:45 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(void)
 	const Animal*		i = new Cat();
 	const WrongAnimal*	wrong_meta = new WrongAnimal();
 	const WrongAnimal*	wrong = new WrongCat();
+	WrongCat		wrongcat;
 
 	std::cout << std::endl;
 	std::cout << "[" << meta->getType() << "]: ";
@@ -46,6 +47,10 @@ int	main(void)
 	std::cout << "[" << wrong->getType() << "]: ";
 	wrong->makeSound();
 
+	std::cout << std::endl;
+	std::cout << "[" << wrongcat.getType() << "]: ";
+	wrongcat.makeSound();
+	
 	delete meta;
 	delete j;
 	delete i;

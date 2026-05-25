@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:36:39 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/22 16:48:53 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/25 16:53:41 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class WrongAnimal {
 		virtual ~WrongAnimal(void);
 
 		std::string	getType(void) const;
-		virtual void	makeSound(void) const;
+		void		makeSound(void) const;
 };
 
 #endif
