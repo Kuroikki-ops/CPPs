@@ -6,12 +6,12 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 16:08:48 by diespino          #+#    #+#              #
-#    Updated: 2026/05/25 15:28:38 by diespino         ###   ########.fr        #
+#    Updated: 2026/05/26 14:07:44 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output NAME
-NAME 		= Animal_brain
+NAME 		= AAnimal
 
 # SRCs
 MAIN		= main.cpp

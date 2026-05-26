@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:33:54 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/25 16:43:45 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:13:53 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@
 
 int	main(void)
 {
+	std::cout << "\n--- Basic test ---" <<std::endl;	
 	const Animal*		meta = new Animal();
 	const Animal*		j = new Dog();
 	const Animal*		i = new Cat();
-	const WrongAnimal*	wrong_meta = new WrongAnimal();
-	const WrongAnimal*	wrong = new WrongCat();
-	WrongCat		wrongcat;
 
 	std::cout << std::endl;
 	std::cout << "[" << meta->getType() << "]: ";
@@ -39,6 +37,16 @@ int	main(void)
 	std::cout << "[" << i->getType() << "]: ";
 	i->makeSound();
 
+	
+	delete meta;
+	delete j;
+	delete i;
+
+	std::cout << "\n--- WrongAnimal/WrongCat test ---" <<std::endl;
+	const WrongAnimal*	wrong_meta = new WrongAnimal();
+	const WrongAnimal*	wrong = new WrongCat();
+	WrongCat		wrongcat;
+	
 	std::cout << std::endl;
 	std::cout << "[" << wrong_meta->getType() << "]: ";
 	wrong_meta->makeSound();
@@ -51,11 +59,20 @@ int	main(void)
 	std::cout << "[" << wrongcat.getType() << "]: ";
 	wrongcat.makeSound();
 	
-	delete meta;
-	delete j;
-	delete i;
-
 	delete wrong_meta;
 	delete wrong;
+
+	std::cout << "\nErase [AnimalWrong virtual destructor] to run another test" <<std::endl;
+
+	std::cout << "\n--- Basic Copy test ---" <<std::endl;
+	Dog	dog1;
+	std::cout << std::endl;
+	Dog	dog2(dog1);
+	std::cout << std::endl;
+	Dog	dog3;
+
+	dog3 = dog1;
+	std::cout << std::endl;
+
 	return (0);
 }

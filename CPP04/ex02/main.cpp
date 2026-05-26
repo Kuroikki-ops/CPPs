@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:33:54 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/25 15:42:09 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:09:10 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,10 @@ int	main(void)
 	dog3 = dog1;
 	std::cout << std::endl;
 
-/*	std::cout << "---- Abstract test ----\n"<< std::endl;
-	const AAnimal	a;
-	const AAnimal*	b = new AAnimal();*/
+	std::cout << "To run \"Abstract test\" uncomment code in main function\n"<< std::endl;
+//	std::cout << "---- Abstract test ----\n"<< std::endl;
+//	const AAnimal	a;
+//	const AAnimal*	b = new AAnimal();
+
 	return (0);
 }
