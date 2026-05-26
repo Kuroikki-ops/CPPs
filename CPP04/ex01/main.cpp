@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:33:54 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/25 16:37:10 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:37:30 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int	main(void)
 {
-	int		num = 10;
+	const int	num = 10;
 	const Animal*	animals[num];
 
 	std::cout << std::endl;	
