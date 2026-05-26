@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:45:19 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/22 16:49:50 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/26 15:20:04 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 Animal::Animal(void) : type("Unknown") {
 
-	std::cout << "\n< Animal constructor called >" << std::endl;
+	std::cout << "< Animal constructor called >" << std::endl;
 }
 
 Animal::Animal(const Animal& other) {
@@ -37,7 +37,7 @@ Animal& Animal::operator=(const Animal& other) {
 
 Animal::~Animal(void) {
 
-	std::cout << "\n< Animal destructor called >" << std::endl;
+	std::cout << "< Animal destructor called >" << std::endl;
 }
 
 std::string	Animal::getType(void) const {

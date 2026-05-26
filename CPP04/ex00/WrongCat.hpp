@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:36:39 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/22 16:53:22 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/26 15:05:56 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat& operator=(const WrongCat& other);
 		virtual ~WrongCat(void);
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif

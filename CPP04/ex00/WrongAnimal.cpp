@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:45:19 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/26 14:01:51 by diespino         ###   ########.fr       */
+/*   Updated: 2026/05/26 15:24:37 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 WrongAnimal::WrongAnimal(void) : type("Wrong Unknown") {
 
-	std::cout << "\n< WrongAnimal constructor called >" << std::endl;
+	std::cout << "< WrongAnimal constructor called >" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& other) {
@@ -37,7 +37,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other) {
 
 WrongAnimal::~WrongAnimal(void) {
 
-	std::cout << "\n< WrongAnimal destructor called >" << std::endl;
+	std::cout << "< WrongAnimal destructor called >" << std::endl;
 }
 
 std::string	WrongAnimal::getType(void) const {
