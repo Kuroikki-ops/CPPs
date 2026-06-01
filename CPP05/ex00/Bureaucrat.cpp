@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 15:32:17 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/29 19:39:22 by diespino         ###   ########.fr       */
+/*   Updated: 2026/06/01 11:53:57 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& other) {
 Bureaucrat::~Bureaucrat() {}
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return ("Grade is too high. Grade must be between 1 and 150!!");}
+	return ("Grade is too high, must be between 1 and 150!");}
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return ("Grade is too low. Grade must be between 1 and 150!!");}
+	return ("Grade is too low, must be between 1 and 150!");}
 
 std::string Bureaucrat::getName(void) const {return (_name);}
 
