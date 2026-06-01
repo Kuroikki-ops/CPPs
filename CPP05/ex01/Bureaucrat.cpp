@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 15:32:17 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/01 14:57:08 by diespino         ###   ########.fr       */
+/*   Updated: 2026/06/01 15:21:49 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("Default-Bu"), _grade(150) {}
 
@@ -60,8 +61,20 @@ void	Bureaucrat::decrementGrade(void) {
 	_grade++;
 }
 
+void	Bureaucrat::signForm(Form& form) {
+
+	try {
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch (Form::GradeTooLowException &e) {
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
 std::ostream&	operator<<(std::ostream& out, const Bureaucrat& bureau) {
 
-	out << "[" << bureau.getName() << "], bureaucrat grade [" << bureau.getGrade() << "]" << std::endl;
+//	out << "[" << bureau.getName() << "], Bureaucrat grade [" << bureau.getGrade() << "]"; 
+	out << "Bureaucrat: " << "[" << bureau.getName() << "] | Grade [" << bureau.getGrade() << "]";
 	return (out);
 }
