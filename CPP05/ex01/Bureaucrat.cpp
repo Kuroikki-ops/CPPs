@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 15:32:17 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/01 15:21:49 by diespino         ###   ########.fr       */
+/*   Updated: 2026/06/05 13:38:19 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,14 @@ int Bureaucrat::getGrade(void) const {return (_grade);}
 void	Bureaucrat::incrementGrade(void) {
 
 	if ((_grade - 1) < 1)
-		throw (GradeTooLowException());
+		throw (GradeTooHighException());
 	_grade--;
 }
 
 void	Bureaucrat::decrementGrade(void) {
 
 	if ((_grade + 1) > 150)
-		throw (GradeTooHighException());
+		throw (GradeTooLowException());
 	_grade++;
 }
 
