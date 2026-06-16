@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 18:44:06 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/11 13:57:26 by diespino         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:23:04 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,60 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
+	std::cout << "\n========{ Basic test }========\n" << std::endl;
+	try {
+		Bureaucrat		a("Bob", 1);
+		ShrubberyCreationForm	aa("New_Forest");
+		
+		std::cout 
+			<< a << "\n\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n" << std::endl;
+
+		a.signForm(aa);
+
+		std::cout 
+			<< "\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n" << std::endl;
+
+		a.executeForm(aa);
+		std::cout << std::endl;
+	}
+	catch (std::exception& e) {std::cout << e.what() << std::endl;}
+	std::cout << "------------------------------\n" << std::endl;
+	try {
+		Bureaucrat		a("Jim", 1);
+		RobotomyRequestForm	aa("Ruffus");
+		
+		std::cout 
+			<< a << "\n\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n" << std::endl;
+
+		a.signForm(aa);
+
+		std::cout 
+			<< "\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n" << std::endl;
+
+		a.executeForm(aa);
+		std::cout << std::endl;
+	}
+	catch (std::exception& e) {std::cout << e.what() << std::endl;}
+	std::cout << "------------------------------\n" << std::endl;
 	try {
 		Bureaucrat		a("Larry", 1);
 		PresidentialPardonForm	aa("Bob");
@@ -37,69 +87,12 @@ int	main(void)
 			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
 			<< "]\n * Signed [" << aa.getFormStatus() << "]\n" << std::endl;
 
-		aa.execute(a);
+		a.executeForm(aa);
+		std::cout << std::endl;
 	}
 	catch (std::exception& e) {std::cout << e.what() << std::endl;}
-/*	std::cout << "\n========{ Basic test }========\n" << std::endl;
-	try {
-		Bureaucrat	a("Larry", 1);
-		Bureaucrat      b("Bob", 50);
-		Bureaucrat	c;
 
-		Form		aa("Soul Contract", 140, 40);
-		Form		bb("A3-54", 5, 120);
-		Form		cc;
-
-		
-		std::cout 
-			<< a << "\n\nForm: " << aa 
-			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
-			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() << "]" 
-			<< "]\n * Signed [" << aa.getFormStatus() << "]\n" << std::endl;
-
-		a.signForm(aa);
-
-		std::cout 
-			<< "\nForm: " << aa 
-			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
-			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() << "]" 
-			<< "]\n * Signed [" << aa.getFormStatus() << "]\n" << std::endl;
-
-		std::cout << "------------------------------\n" << std::endl;
-
-		std::cout 
-			<< b << "\n\nForm: " << bb 
-			<< "\n\n * Sign Grade: [" << bb.getGradeValue()
-			<< "]\n * Exec. Grade: [" << bb.getExecuteValue() << "]"
-			<< "]\n * Signed: [" << bb.getFormStatus() << "]\n" << std::endl;
-
-		b.signForm(bb);
-
-		std::cout 
-			<< "\nForm: " << bb 
-			<< "\n\n * Sign Grade: [" << bb.getGradeValue()
-			<< "]\n * Exec. Grade: [" << bb.getExecuteValue() << "]"
-			<< "]\n * Signed: [" << bb.getFormStatus() << "]\n" << std::endl;
-
-		std::cout << "------------------------------\n" << std::endl;
-	
-		std::cout 
-			<< c << "\n\nForm " << cc 
-			<< "\n\n * Sign Grade: [" << cc.getGradeValue()
-			<< "]\n * Exec. Grade: [" << cc.getExecuteValue() << "]"
-			<< "]\n * Signed: [" << cc.getFormStatus() << "]\n" << std::endl;
-
-		c.signForm(cc);
-
-		std::cout 
-			<< "\nForm " << cc 
-			<< "\n\n * Sign Grade: [" << cc.getGradeValue()
-			<< "]\n * Exec. Grade: [" << cc.getExecuteValue() << "]"
-			<< "]\n * Signed: [" << cc.getFormStatus() << "]\n" << std::endl;
-	}
-	catch (std::exception& e) {std::cout << e.what() << std::endl;}
-//
-	std::cout << "\n======={ Invalid test }=======\n" << std::endl;
+/*	std::cout << "\n======={ Invalid test }=======\n" << std::endl;
 	try {
 		Bureaucrat	a("Larry", 0);
 	}

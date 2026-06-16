@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 12:47:10 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/11 14:04:40 by diespino         ###   ########.fr       */
+/*   Updated: 2026/06/16 16:05:39 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,15 @@ PresidentialPardonForm::~PresidentialPardonForm(void) {}
 
 std::string	PresidentialPardonForm::getTarget(void) const {return (_target);}
 
-void	PresidentialPardonForm::execute(Bureaucrat const & executor) {
+void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 
+	if (beExecuted(executor))
+		throw (GradeTooLowException());
+	std::cout
+		<< executor.getName() 
+		<< " executed the " 
+		<< this->getName() << std::endl;
 	std::cout 
-		<< "Bureaucrat [" << executor.getName() 
-		<< "] | Grade [" << executor.getGrade() 
-		<< "]: has executed the Form " << this->getName() << "\n" << std::endl;
-
-	std::cout 
-		<< "Informs that " << this->getTarget() 
+		<< "\n >> Informs that " << this->getTarget() 
 		<< " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

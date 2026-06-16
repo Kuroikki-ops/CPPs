@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 15:11:24 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/11 12:28:15 by diespino         ###   ########.fr       */
+/*   Updated: 2026/06/16 14:48:15 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ class	Bureaucrat {
 		int		getGrade(void) const;
 		void		incrementGrade(void);
 		void		decrementGrade(void);
+
 		void		signForm(AForm& form);
+		void		executeForm(AForm const & form);
 
 		class	GradeTooHighException : public std::exception {
 		
