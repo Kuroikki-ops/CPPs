@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 18:44:06 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/16 18:23:04 by diespino         ###   ########.fr       */
+/*   Updated: 2026/06/17 14:55:51 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	main(void)
 	}
 	catch (std::exception& e) {std::cout << e.what() << std::endl;}
 
-/*	std::cout << "\n======={ Invalid test }=======\n" << std::endl;
+	std::cout << "\n======={ Invalid test }=======\n" << std::endl;
 	try {
 		Bureaucrat	a("Larry", 0);
 	}
@@ -101,76 +101,100 @@ int	main(void)
 		Bureaucrat	a("Larry", 151);
 	}
 	catch (std::exception& e) {std::cout << e.what() << std::endl;}
+	std::cout << "\n------------------------------\n" << std::endl;
 	try {
-		Form		aa("Soul Contract", 0, 40);
-	}
-	catch (std::exception& e) {std::cout << e.what() << std::endl;}
-	try {
-		Form		aa("Soul Contract", 151, 40);
-	}
-	catch (std::exception& e) {std::cout << e.what() << std::endl;}
-	try {
-		Form		aa("Soul Contract", 1, 0);
-	}
-	catch (std::exception& e) {std::cout << e.what() << std::endl;}
-	try {
-		Form		aa("Soul Contract", 150, 151);
-	}
-	catch (std::exception& e) {std::cout << e.what() << std::endl;}
-//
-	std::cout << "\n\n======{ Increment test }======\n" << std::endl;
-	try {
-		Bureaucrat	a("Larry", 1);
-
-		std::cout << a << "\n";
-		a.incrementGrade();
-		std::cout << a << "\n" << std::endl;
-	}
-	catch (std::exception& e) {std::cout << e.what() << "\n" << std::endl;}
-	try {
-		Bureaucrat	b("Bob", 50);
+		Bureaucrat		a("Bob_1", 150);
+		Bureaucrat		b("Bob_2", 140);
+		ShrubberyCreationForm	aa("New_Forest");
 		
-		std::cout << b << "\n";
-		b.incrementGrade();
-		std::cout << b << "\n" << std::endl;
-	}
-	catch (std::exception& e) {std::cout << e.what() << "\n" << std::endl;}
-	try {
-		Bureaucrat      c("Jim", 150);
+		std::cout 
+			<< a << "\n" << b
+			<< "\n\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n"
+			<< std::endl;
 
-		std::cout << c << "\n";
-		c.incrementGrade();
-		std::cout << c << "\n" << std::endl;
-	}
-	catch (std::exception& e) {std::cout << e.what() << "\n" << std::endl;}
-//
-	std::cout << "\n======{ Decrement test }======\n" << std::endl;
-	try {
-		Bureaucrat	a("Larry", 1);
+		std::cout << std::endl;
+		a.signForm(aa);
+		a.executeForm(aa);
+		std::cout << std::endl;
+		b.signForm(aa);
 
-		std::cout << a << "\n";
-		a.decrementGrade();
-		std::cout << a << "\n" << std::endl;
+		std::cout 
+			<< "\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n"
+			<< std::endl;
+
+		b.executeForm(aa);
+		std::cout << std::endl;
 	}
-	catch (std::exception& e) {std::cout << e.what() << "\n" << std::endl;}
+	catch (std::exception& e) {std::cout << e.what() << std::endl;}
+	std::cout << "------------------------------\n" << std::endl;
 	try {
-		Bureaucrat	b("Bob", 50);
+		Bureaucrat		a("Jim_1", 80);
+		Bureaucrat		b("Jim_2", 60);
+		RobotomyRequestForm	aa("Ruffus");
 		
-		std::cout << b << "\n";
-		b.decrementGrade();
-		std::cout << b << "\n" << std::endl;
-	}
-	catch (std::exception& e) {std::cout << e.what() << "\n" << std::endl;}
-	try {
-		Bureaucrat      c("Jim", 150);
+		std::cout 
+			<< a << "\n" << b
+			<< "\n\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n"
+			<< std::endl;
 
-		std::cout << c << "\n";
-		c.decrementGrade();
-		std::cout << c << "\n" << std::endl;
+		std::cout << std::endl;
+		a.signForm(aa);
+		a.executeForm(aa);
+		std::cout << std::endl;
+		b.signForm(aa);
+
+		std::cout 
+			<< "\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n"
+			<< std::endl;
+
+		b.executeForm(aa);
+		std::cout << std::endl;
 	}
-	catch (std::exception& e) {std::cout << e.what() << "\n" << std::endl;}
-//
-	std::cout << "\n========{ Copy test }=========\n" << std::endl;
+	catch (std::exception& e) {std::cout << e.what() << std::endl;}
+	std::cout << "------------------------------\n" << std::endl;
+	try {
+		Bureaucrat		a("Larry_1", 30);
+		Bureaucrat		b("Larry_2", 10);
+		PresidentialPardonForm	aa("Bob");
+		
+		std::cout 
+			<< a << "\n" << b
+			<< "\n\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n"
+			<< std::endl;
+
+		std::cout << std::endl;
+		a.signForm(aa);
+		a.executeForm(aa);
+		std::cout << std::endl;
+		b.signForm(aa);
+
+		std::cout 
+			<< "\nForm: " << aa 
+			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
+			<< "]\n * Signed [" << aa.getFormStatus() << "]\n"
+			<< std::endl;
+
+		b.executeForm(aa);
+		std::cout << std::endl;
+	}
+	catch (std::exception& e) {std::cout << e.what() << std::endl;}
+/*	std::cout << "\n========{ Copy test }=========\n" << std::endl;
 	try {
 		Bureaucrat	a("Larry", 1);
 		Bureaucrat	b;

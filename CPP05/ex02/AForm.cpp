@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:35:28 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/16 16:01:33 by diespino         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:47:15 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ AForm&	AForm::operator=(const AForm& other) {
 AForm::~AForm(void) {}
 
 const char*	AForm::GradeTooHighException::what() const throw() {
-	return ("Form grade is too high");}
+	return ("grade is too high");}
 
 const char*	AForm::GradeTooLowException::what() const throw() {
-	return ("Form grade is too low");}
+	return ("grade is too low");}
 
 const char*	AForm::FormNotSigned::what() const throw() {
-	return ("Form is not signed");}
+	return ("form is not signed");}
 
 std::string	AForm::getName(void) const {return (_name);}
 
