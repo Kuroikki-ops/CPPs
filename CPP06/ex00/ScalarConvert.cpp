@@ -1,7 +1,9 @@
 
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <locale>
+#include <cstdlib>
 
 #include "ScalarConvert.hpp"
 
@@ -18,14 +20,7 @@ bool	isValid(const std::string& literal) {
 	std::cout << "\nNo nan/nanf | -inf/-inff | +inf/+inf\n" << std::endl;
 
 	// char
-/*	if (literal.length() == 3
-			&& ((literal[0] == '\'' && literal[2] == '\'') 
-			|| (literal[0] == '\"' && literal[2] == '\"')))
-	{
-		std::cout << "Son 3\n" << std::endl;
-		return (true);
-	}*/
-	if (literal.length() == 1 && std::isalpha(literal[0]))
+	if (literal.length() == 1 && std::isprint(literal[0]))
 		return (true);
 	if (literal.length() == 3)
 	{ 
@@ -68,6 +63,15 @@ bool	isValid(const std::string& literal) {
 	return (false);
 }
 
+double	toDouble(const std::string& literal)
+{
+	if ((literal[0] == '\'') && (literal[literal.size() - 1] == '\''))
+		return (static_cast<double>(literal[1]));
+	else if (std::isprint(literal[0]) && !std::isdigit(literal[0]))
+		return (static_cast<double>(literal[0]));
+	return (std::atof(literal.c_str()));
+}
+
 void	ScalarConvert::convert(const std::string& literal) {
 
 	if (!isValid(literal))
@@ -75,5 +79,20 @@ void	ScalarConvert::convert(const std::string& literal) {
 		std::cout << "ARG no valido xd" << std::endl;
 		return ;
 	}
-	std::cout << "Todo gucci!!" << std::endl;
+	
+// lietaral(string)	--> DOUBLE(Decimales)
+// 				--> INT(Numero)
+// 				--> CHAR(ASCII)
+//					--> FLOAT(+f)
+
+	double	val = toDouble(literal);
+	int	num = static_cast<int>(val);// falta intMAX | intMIN
+	char	print = static_cast<char>(val);// falta (0-126) 
+
+	std::cout
+		<< "ARG   : " << literal
+		<< "\n\nDOUBLE: " << val
+		<< "\nINT   : " << num
+		<< "\nCHAR  : " << print
+		<< "\nTodo gucci!!" << std::endl;
 }
