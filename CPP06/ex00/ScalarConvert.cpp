@@ -4,6 +4,8 @@
 #include <string>
 #include <locale>
 #include <cstdlib>
+#include <iomanip>
+#include <limits>
 
 #include "ScalarConvert.hpp"
 
@@ -72,6 +74,51 @@ double	toDouble(const std::string& literal)
 	return (std::atof(literal.c_str()));
 }
 
+/*void	toIntChar(double& val)
+{
+	int	num;
+	char	print;
+	long	value = static_cast<long>(val);
+
+	if (value > std::numeric_limits<int>::max() || value < std::numeric_limits<int>::min())
+	{
+		std::cout
+			<< "\nCHAR  : impossible"
+			<< "\nINT   : impossible"
+			<< std::endl;
+		return ;
+	}
+	else
+		num = static_cast<int>(val);
+	
+	if (num <= 127 && num >= 0)
+	{
+		if (num >= 33 && num <= 126)
+			print = static_cast<char>(num);
+		else
+		{
+			std::cout
+				<< "\nCHAR  : Non displayable"
+				<< "\nINT   : " << num
+				<< std::endl;
+			return ;
+		}
+	}
+	else
+	{
+		std::cout
+			<< "\nCHAR  : impossible"
+			<< "\nINT   : " << num
+			<< std::endl;
+		return ;
+	}
+
+	std::cout
+		<< "\nCHAR  : " << print
+		<< "\nINT   : " << num
+		<< std::endl;
+}*/
+
 void	ScalarConvert::convert(const std::string& literal) {
 
 	if (!isValid(literal))
@@ -82,17 +129,32 @@ void	ScalarConvert::convert(const std::string& literal) {
 	
 // lietaral(string)	--> DOUBLE(Decimales)
 // 				--> INT(Numero)
-// 				--> CHAR(ASCII)
-//					--> FLOAT(+f)
-
-	double	val = toDouble(literal);
-	int	num = static_cast<int>(val);// falta intMAX | intMIN
-	char	print = static_cast<char>(val);// falta (0-126) 
+// 					--> CHAR(ASCII)
+//				--> FLOAT(+f)
 
 	std::cout
-		<< "ARG   : " << literal
-		<< "\n\nDOUBLE: " << val
-		<< "\nINT   : " << num
-		<< "\nCHAR  : " << print
+		<< "ARG   : " << literal << std::endl;
+
+	double	val = toDouble(literal);
+	float	flo = static_cast<float>(val);
+
+	
+	if (val <= 127 && val >= 0)
+	{
+		if (num >= 33 && num <= 126)
+			print = static_cast<char>(num);
+		else
+			std::cout << "CHAR  : Non displayable" << std::endl;
+	}
+	else
+		std::cout << "CHAR  : impossible" << std::endl;
+	
+
+	int	num = static_cast<int>(val);
+	
+
+	std::cout << std::fixed << std::setprecision(1)// 1 decimales
+		<< "FLOAT : " << flo << "f"
+		<< "\nDOUBLE: " << val
 		<< "\nTodo gucci!!" << std::endl;
 }

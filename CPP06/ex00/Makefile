@@ -6,12 +6,12 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 16:08:48 by diespino          #+#    #+#              #
-#    Updated: 2026/05/29 18:51:27 by diespino         ###   ########.fr        #
+#    Updated: 2026/08/19 16:36:19 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output NAME
-NAME 		= ScalarConvert
+NAME 		= convert
 
 # SRCs
 MAIN		= main.cpp
