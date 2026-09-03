@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:41:24 by diespino          #+#    #+#             */
-/*   Updated: 2026/09/03 17:13:56 by diespino         ###   ########.fr       */
+/*   Updated: 2026/09/03 19:15:57 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,19 @@
 
 #include "ScalarConvert.hpp"
 
-bool	isValid(const std::string& literal) {
+ScalarConvert::ScalarConvert(void) {}
+
+ScalarConvert::ScalarConvert(const ScalarConvert& other) {(void)other;}
+
+ScalarConvert&	ScalarConvert::operator=(const ScalarConvert& other) {
+
+	(void)other;
+	return (*this);
+}
+
+ScalarConvert::~ScalarConvert(void) {}
+
+bool	ScalarConvert::isValid(const std::string& literal) {
 
 	bool	dot = false;
 	size_t	i = 0;
@@ -61,7 +73,7 @@ bool	isValid(const std::string& literal) {
 	return (false);
 }
 
-double	toDouble(const std::string& literal)
+double	ScalarConvert::toDouble(const std::string& literal)
 {
 	size_t	i = 0;
 
