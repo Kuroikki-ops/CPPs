@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:36:39 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/22 15:55:15 by diespino         ###   ########.fr       */
+/*   Updated: 2026/08/31 16:00:40 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define DOG_HPP
 
 # include <string>
-# include "Animal.hpp"
+# include "../Animal.hpp"
 
 class Dog : public Animal {
 

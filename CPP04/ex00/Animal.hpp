@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:36:39 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/22 15:55:29 by diespino         ###   ########.fr       */
+/*   Updated: 2026/08/31 16:05:18 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ class Animal {
 		std::string	getType(void) const;
 		virtual void	makeSound(void) const;
 };
+
 
 #endif

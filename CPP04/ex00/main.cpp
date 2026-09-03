@@ -6,17 +6,17 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 14:33:54 by diespino          #+#    #+#             */
-/*   Updated: 2026/05/26 15:25:20 by diespino         ###   ########.fr       */
+/*   Updated: 2026/08/31 16:01:41 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 #include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "dog/Dog.hpp"
+#include "cat/Cat.hpp"
+#include "wrong/WrongAnimal.hpp"
+#include "wrong/WrongCat.hpp"
 
 int	main(void)
 {
