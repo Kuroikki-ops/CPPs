@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/03 18:55:18 by diespino          #+#    #+#             */
-/*   Updated: 2026/09/04 17:56:57 by diespino         ###   ########.fr       */
+/*   Created: 2026/09/04 18:13:37 by diespino          #+#    #+#             */
+/*   Updated: 2026/09/04 19:33:11 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	SERIALIZER_HPP
-# define SERIALIZER_HPP
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-# include <stdint.h>
-# include <string>
+Base::~Base(void) {}
 
-struct	Data {
+Base*	generate(void) {
 
-	std::string	data_str;
-	int		data_int;
-};
+	int	rNum = std::rand() % 3;
 
-class	Serializer {
+	if (rNum == 0)
+		return (new A());
+	else if (rNum == 1)
+		return (new B());
+	else
+		return (new C());
+}
 
-	private:
-		Serializer(void);
-		Serializer(const Serializer& other);
-		Serializer& operator=(const Serializer& other);
-		~Serializer(void);
-		
-	public:
+void	identify(Base* p) {}
 
-		static uintptr_t	serialize(Data* ptr);
-		static Data*		deserialize(uintptr_t  raw);
-};
-
-#endif
+void	identify(Base& p) {}
