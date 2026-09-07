@@ -6,17 +6,17 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 16:08:48 by diespino          #+#    #+#              #
-#    Updated: 2026/09/04 17:58:55 by diespino         ###   ########.fr        #
+#    Updated: 2026/09/07 15:53:46 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output NAME
-NAME 		= realtype
+NAME 		= identifier
 
 # SRCs
 MAIN		= main.cpp
 
-SRC		= Serializer.cpp
+SRC		= Base.cpp
 
 OBJS		= $(MAIN:.cpp=.o) $(SRC:.cpp=.o)
 DEPS		= $(MAIN:.cpp=.d) $(SRC:.cpp=.d)
