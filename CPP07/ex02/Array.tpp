@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 13:31:38 by diespino          #+#    #+#             */
-/*   Updated: 2026/09/14 17:45:32 by diespino         ###   ########.fr       */
+/*   Updated: 2026/09/15 14:23:40 by diespino         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -26,11 +26,12 @@ Array<T>& Array<T>::operator=(const Array<T>& other) {
 
 	if (this != &other)
 	{
-		_len = other._len;
+		T* new_array = new T[other._len];
+		for (unsigned int i = 0; i < other._len; i++)
+			new_array[i] = other._array[i];
 		delete[] _array;
-		_array = new T[_len];
-		for (unsigned int i = 0; i < _len; i++)
-			_array[i] = other._array[i];
+		_array = new_array;
+		_len = other._len;
 	}
 	return (*this);
 }
