@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 18:16:25 by diespino          #+#    #+#             */
-/*   Updated: 2026/09/17 19:55:20 by diespino         ###   ########.fr       */
+/*   Updated: 2026/09/18 17:46:26 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,24 @@ class Span {
 		~Span(void);
 
 		std::vector<unsigned int> getVector(void);
+		unsigned int	getLen(void) const;
 
 		void	addNumber(unsigned int value);
 		
 		unsigned int	shortestSpan(void);
 		unsigned int	longestSpan(void);
+
+		class	NoSpace : public std::exception {
+
+			public:
+				const char* what() const throw ();
+		};
+
+		class	NotEnoughValues : public std::exception {
+
+			public:
+				const char* what() const throw ();
+		};
 };
 
 #endif

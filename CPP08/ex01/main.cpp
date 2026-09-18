@@ -6,12 +6,16 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 18:28:45 by diespino          #+#    #+#             */
-/*   Updated: 2026/09/17 19:55:16 by diespino         ###   ########.fr       */
+/*   Updated: 2026/09/18 17:45:48 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
 #include <vector>
+#include <algorithm>
 
 #include "Span.hpp"
 
@@ -19,27 +23,138 @@ void	printContainer(std::vector<unsigned int> v) {
 
 	std::vector<unsigned int>::iterator	it;
 
+	std::cout << "{ ";
 	for (it = v.begin(); it != v.end(); it++)
 		std::cout << *it << " ";
-	std::cout << std::endl;
+	std::cout << "}" << std::endl;
 }
 
 int	main(void) {
 
-	Span	span(5);
+	std::srand(std::time(NULL));
 
-	span.addNumber(14);
-	span.addNumber(29);
-	span.addNumber(10);
-	span.addNumber(1);
-	span.addNumber(3);
+	try {
+		Span	test = Span(5);
 
-	printContainer(span.getVector());
+		std::cout << std::endl;
+		test.addNumber(6);
+		test.addNumber(3);
+		test.addNumber(17);
+		test.addNumber(9);
+		test.addNumber(11);
+		printContainer(test.getVector());
+		std::cout
+			<< "Shortest: " << test.shortestSpan()
+			<< "\nLongest : " << test.longestSpan()
+			<< "\n" << std::endl;
+	} catch (std::exception& e) {
 
-	std::cout
-		<< "Shortest: " << span.shortestSpan()
-		<< "\nLongest : " << span.longestSpan()
-		<< std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	try {
+		Span	test(5);
+
+		std::cout << std::endl;
+		for (unsigned int i = 0; i < test.getLen(); i++)
+			test.addNumber(std::rand());
+
+		printContainer(test.getVector());
+		std::cout
+			<< "Shortest: " << test.shortestSpan()
+			<< "\nLongest : " << test.longestSpan()
+			<< "\n" << std::endl;
+	} catch (std::exception& e) {
+
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	try {
+		Span	test(20);
+
+		std::cout << std::endl;
+		for (unsigned int i = 0; i < test.getLen(); i++)
+			test.addNumber(std::rand());
+		
+		printContainer(test.getVector());
+		
+		std::cout
+			<< "Shortest: " << test.shortestSpan()
+			<< "\nLongest : " << test.longestSpan()
+			<< "\n" << std::endl;
+	} catch (std::exception& e) {
+
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	try {
+		Span	test(10000);
+
+		std::cout << std::endl;
+		for (unsigned int i = 0; i < test.getLen(); i++)
+			test.addNumber(std::rand());
+
+		printContainer(test.getVector());
+
+		std::cout
+			<< "Shortest: " << test.shortestSpan()
+			<< "\nLongest : " << test.longestSpan()
+			<< "\n" << std::endl;
+	} catch (std::exception& e) {
+
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	try {
+		Span	test(10);
+
+		for (unsigned int i = 0; i < (test.getLen() + 1); i++)
+			test.addNumber(std::rand());
+
+		std::cout << std::endl;
+		printContainer(test.getVector());
+
+		std::cout
+			<< "Shortest: " << test.shortestSpan()
+			<< "\nLongest : " << test.longestSpan()
+			<< "\n" << std::endl;
+	} catch (std::exception& e) {
+
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	try {
+		Span	test(10);
+
+		for (unsigned int i = 0; i < 2; i++)
+			test.addNumber(std::rand());
+
+		std::cout << std::endl;
+		printContainer(test.getVector());
+
+		std::cout
+			<< "Shortest: " << test.shortestSpan()
+			<< "\nLongest : " << test.longestSpan()
+			<< "\n" << std::endl;
+	} catch (std::exception& e) {
+
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	try {
+		Span	test;
+
+		for (unsigned int i = 0; i < 2; i++)
+			test.addNumber(std::rand());
+
+		std::cout << std::endl;
+		printContainer(test.getVector());
+
+		std::cout
+			<< "Shortest: " << test.shortestSpan()
+			<< "\nLongest : " << test.longestSpan()
+			<< "\n" << std::endl;
+	} catch (std::exception& e) {
+
+		std::cout << "\nError: " << e.what() << std::endl;
+	}
 
 	return (0);
 }
