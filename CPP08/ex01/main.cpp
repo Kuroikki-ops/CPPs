@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 18:28:45 by diespino          #+#    #+#             */
-/*   Updated: 2026/09/18 17:45:48 by diespino         ###   ########.fr       */
+/*   Updated: 2026/09/18 17:50:12 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 #include <algorithm>
 
 #include "Span.hpp"
+
+/*
+ *Last but not least, it would be wonderful to fill your Span using a range of iterators.
+Making thousands of calls to addNumber() is so annoying. Implement a member function
+to add multiple numbers to your Span in a single call.
+ * */
 
 void	printContainer(std::vector<unsigned int> v) {
 
