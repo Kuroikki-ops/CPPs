@@ -18,7 +18,7 @@
 class Span {
 
 	private:
-		unsigned int			_len;
+		unsigned int				_len;
 		std::vector<unsigned int>	_v;
 
 	public:
@@ -28,8 +28,8 @@ class Span {
 		Span& operator=(const Span& other);
 		~Span(void);
 
-		std::vector<unsigned int> getVector(void);
-		unsigned int	getLen(void) const;
+		std::vector<unsigned int>	getVector(void);
+		unsigned int				getLen(void) const;
 
 		void	addNumber(unsigned int value);
 		
@@ -47,6 +47,14 @@ class Span {
 			public:
 				const char* what() const throw ();
 		};
+
+		template <typename iter>
+			void	addRange(iter begin, iter end) {
+
+				if ((std::distance(begin, end) + _v.size()) > _len)
+					throw(NoSpace());
+				_v.insert(_v.end(), begin, end);
+			}
 };
 
 #endif

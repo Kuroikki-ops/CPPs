@@ -19,12 +19,6 @@
 
 #include "Span.hpp"
 
-/*
- *Last but not least, it would be wonderful to fill your Span using a range of iterators.
-Making thousands of calls to addNumber() is so annoying. Implement a member function
-to add multiple numbers to your Span in a single call.
- * */
-
 void	printContainer(std::vector<unsigned int> v) {
 
 	std::vector<unsigned int>::iterator	it;
@@ -162,5 +156,114 @@ int	main(void) {
 		std::cout << "\nError: " << e.what() << std::endl;
 	}
 
+	try {
+		std::vector<unsigned int>	test;
+		unsigned int				test_len = 11;
+		Span						test2(20);
+
+		std::cout << std::endl;
+		for (unsigned int i = 0; i < test_len; i++)
+			test.push_back(i);
+
+		std::cout << "Pre TEST\nSize " << test.size() << " ";
+		printContainer(test);
+		std::cout << "Size " << test2.getLen() << " ";
+		printContainer(test2.getVector());
+		std::cout << std::endl;
+
+		test2.addRange(test.begin(), test.end());
+
+		std::cout << "ADD Range\nSize " << test.size() << " ";
+		printContainer(test);
+		std::cout << "Size " << test2.getLen() << " ";
+		printContainer(test2.getVector());
+		std::cout << std::endl;
+
+	} catch (std::exception& e) {
+
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	try {
+		Span	test(11);
+		Span	test2(20);
+
+		std::cout << std::endl;
+		for (unsigned int i = 0; i < test.getLen(); i++)
+			test.addNumber(i);
+
+		std::cout << "Pre TEST\nSize " << test.getLen() << " ";
+		printContainer(test.getVector());
+		std::cout << "Size " << test2.getLen() << " ";
+		printContainer(test2.getVector());
+		std::cout << std::endl;
+
+		std::vector<unsigned int> tmp = test.getVector();
+		test2.addRange(tmp.begin(), tmp.end());
+
+		std::cout << "ADD Range\nSize " << test.getLen() << " ";
+		printContainer(test.getVector());
+		std::cout << "Size " << test2.getLen() << " ";
+		printContainer(test2.getVector());
+		std::cout << std::endl;
+
+	} catch (std::exception& e) {
+
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	try {
+		std::vector<unsigned int>	test;
+		unsigned int				test_len = 11;
+		Span						test2(5);
+
+		std::cout << std::endl;
+		for (unsigned int i = 0; i < test_len; i++)
+			test.push_back(i);
+
+		std::cout << "Pre TEST\nSize " << test.size() << " ";
+		printContainer(test);
+		std::cout << "Size " << test2.getLen() << " ";
+		printContainer(test2.getVector());
+		std::cout << std::endl;
+
+		test2.addRange(test.begin(), test.end());
+
+		std::cout << "ADD Range\nSize " << test.size() << " ";
+		printContainer(test);
+		std::cout << "Size " << test2.getLen() << " ";
+		printContainer(test2.getVector());
+		std::cout << std::endl;
+
+	} catch (std::exception& e) {
+
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	try {
+		Span	test(11);
+		Span	test2(5);
+
+		std::cout << std::endl;
+		for (unsigned int i = 0; i < test.getLen(); i++)
+			test.addNumber(i);
+
+		std::cout << "Pre TEST\nSize " << test.getLen() << " ";
+		printContainer(test.getVector());
+		std::cout << "Size " << test2.getLen() << " ";
+		printContainer(test2.getVector());
+		std::cout << std::endl;
+
+		std::vector<unsigned int> tmp = test.getVector();
+		test2.addRange(tmp.begin(), tmp.end());
+
+		std::cout << "ADD Range\nSize " << test.getLen() << " ";
+		printContainer(test.getVector());
+		std::cout << "Size " << test2.getLen() << " ";
+		printContainer(test2.getVector());
+		std::cout << std::endl;
+
+	} catch (std::exception& e) {
+
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 	return (0);
 }
