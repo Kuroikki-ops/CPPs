@@ -1,0 +1,24 @@
+CPP09
+
+[ ] ex00 --> map
+revisa CPP01/ex04 para abrir archivos
+crear container map con las fechas como alias
+multiplica los values de las fechas por el value del argumento
+
+
+[ ] ex01 --> queue
+ARGs:   7 7 * 7 -
+STACK:  - 7 * 7 7 --> [-7] [*7] [7] --> [7] [*7] [-7]
+
+OP rev: 7 - 7 * 7
+OP OK:  7 * 7 - 7
+----------------------------------------------------
+
+ARGs:   2 3 * 4 -
+STACK:  - 4 * 3 2 --> [-4] [*3] [2] --> [2] [*3] [-4]
+
+OP rev: 4 - 3 * 2
+OP OK:  2 * 3 - 4
+
+
+[] ex02 --> list | vector
