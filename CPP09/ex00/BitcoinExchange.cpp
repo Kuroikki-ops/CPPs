@@ -23,6 +23,11 @@ BitcoinExchange::BitcoinExchange(void) {
 	std::ifstream	infile("data.csv");
 	std::string	line;
 
+	if (!infile.is_open())
+	{
+		std::cout << "Error: missing file: data.csv" << std::endl;
+		return ;
+	}
 	while (std::getline(infile, line))
 	{
 		std::size_t	found = line.find_last_of(",");
@@ -54,24 +59,6 @@ void	BitcoinExchange::print_data(void) {
 		std::cout << it->first << " => " << it->second << std::endl;
 }
 
-// parser
-// 	Nombre de file (comprobar si existe y si se puede abrir)
-// 	Crear map de file
-//
-// ejecucion
-// 	Iterar los alias uno a uno hasta encontarlo o el menor mas cercano
-// 		--> parseo de los alias
-// 		--> parseo de los numeros de los alias
-// 			> Solo acepta numeros positivos
-//			> No acepta numeros muy largos (mirar si es int_max)
-//
-//	 A	 B   C
-// [2011-01-03][ | ][3]
-//
-// A --> [4 nums][-][2 nums][-][2 nums] 
-// B --> [space][|][space]
-// C --> [float postivo]
-//
 bool	parse_line(std::string line)
 {
 	std::size_t	found = line.find(" | ");
@@ -122,6 +109,8 @@ bool	parse_date(std::string	date)
 
 void	BitcoinExchange::process_file(std::string file) {
 
+	if (_data.empty())
+		return ;
 	std::ifstream	infile(file.c_str());
 
 	if (!infile.is_open())
@@ -134,6 +123,8 @@ void	BitcoinExchange::process_file(std::string file) {
 
 	while (std::getline(infile, line))
 	{
+		if (line == "date | value")
+			continue ;
 		if (!parse_line(line))
 			continue ;
 		std::size_t	found = line.find(" | ");
@@ -155,8 +146,18 @@ void	BitcoinExchange::process_file(std::string file) {
 				std::cout << "Error: not a positive number" << std::endl;
 			continue ;
 		}
-//		Buscar en container fecha mas cercana y multi value
-		std::cout << date << " => " << value << std::endl;
+
+		std::map<std::string, float>::iterator	it = _data.upper_bound(date);
+
+		if (it == _data.begin())
+			std::cout << "Error: no previous date available" << std::endl;
+		else
+		{
+			--it;
+			std::cout
+				<< date << " => " << value << " = "
+				<< value * it->second << std::endl;
+		}
 	}
 	infile.close();
 }

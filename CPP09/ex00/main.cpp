@@ -21,12 +21,15 @@
 
 int	main(int argc, char** argv) {
 
-	(void)argc;
+	if (argc != 2)
+	{
+		std::cerr << "Error: you must provide a file as an argument" << std::endl;
+		return (EXIT_FAILURE);
+	}
 
 	BitcoinExchange	btc;
 
 	btc.process_file(argv[1]);
-//	btc.print_data();
 
 	return (0);
 }

@@ -14,42 +14,18 @@
 #include <stack>
 #include <queue>
 
-int	main(void) {
+#include "RPN.hpp"
 
-	std::queue<int>		q_Num;
-	std::queue<char>	q_Op;
+int	main(int argc, char** argv) {
 
-	q_Num.push(8);
-	q_Num.push(9);
-	q_Num.push(9);
-	q_Num.push(9);
-	q_Num.push(9);
-	q_Num.push(4);
-	q_Num.push(1);
-
-	q_Op.push('*');
-	q_Op.push('-');
-	q_Op.push('-');
-	q_Op.push('-');
-	q_Op.push('-');
-	q_Op.push('+');
-
-	int	result = q_Num.front();
-
-	while (!q_Op.empty())
+	if (argc != 2)
 	{
-		q_Num.pop();
-		int n2 = q_Num.front();
-		if (q_Op.front() == '*')
-			result *= n2;
-		if (q_Op.front() == '-')
-			result -= n2;
-		if (q_Op.front() == '+')
-			result += n2;
-		if (q_Op.front() == '/')
-			result /= n2;
-		q_Op.pop();
+		std::cerr << "Error: please enter one Reverse Polish Notation" << std::endl;
+		return (1);
 	}
-	std::cout << "\nResult: " << result << std::endl;
+
+	RPN	rpn;
+	rpn.process(argv[1]);
+
 	return (0);
 }
