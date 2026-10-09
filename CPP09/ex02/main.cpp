@@ -10,14 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <string>
+
 #include "PmergeMe.hpp"
 
 int	main(int argc, char** argv) {
 
 	PmergeMe	PmMe;
+	std::string	values;
 
-	(void)argc;
-	PmMe.list(argv[1]);
+	if (argc <= 1)
+	{
+		std::cerr << "Error: no args  recived" << std::endl;
+		return (1);
+	}
+	else if (argc == 2)
+		values = argv[1];
+	else
+	{
+		for (int i = 1; argv[i]; i++)
+		{
+			values.append(argv[i]);
+			if (argv[i + 1])
+				values.push_back(' ');
+		}
+	}
+//	PmMe.list(values);
+	PmMe.vector(values);
 
 	return (0);
 }

@@ -33,11 +33,13 @@ class	PmergeMe {
 
 		struct Limit {
 
-			std::list<int>::iterator limit;
+			std::list<int>::iterator	list_limit;
+			std::size_t					vec_limit;
 			int	num;
 		};
 
 		void	list(std::string values);
+		void	vector(std::string values);
 };
 
 #endif
