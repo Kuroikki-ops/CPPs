@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/06 11:47:22 by diespino          #+#    #+#             */
-/*   Updated: 2026/10/06 17:59:01 by diespino         ###   ########.fr       */
+/*   Updated: 2026/10/12 19:27:18 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <sstream>
 #include <algorithm>
 #include <ctime>
+#include <iomanip>
 
 #include "PmergeMe.hpp"
 
@@ -32,17 +33,7 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe& other) {
 
 PmergeMe::~PmergeMe(void) {}
 
-bool	wrong_input(std::string values) {
-
-	for (int i = 0; values[i]; i++)
-	{
-		if (!std::isdigit(values[i]) && values[i] != ' ')
-			return (false);
-	}
-	return (true);
-}
-
-std::list<int>	JacobsthalOrder(int pend_size) {
+std::list<int>	list_JacobsthalOrder(int pend_size) {
 
 	std::list<int>	order;
 
@@ -72,26 +63,44 @@ std::list<int>	JacobsthalOrder(int pend_size) {
 	return (order);
 }
 
-// Values = 3 5 1 4 6 2 7
-// Pairs  = [3, 5] [1, 4] [6, 2]
-// Odd    = [7]
-//
+std::vector<std::size_t>	vec_JacobsthalOrder(std::size_t pend_size) {
+
+	std::vector<std::size_t>	order;
+
+	if (pend_size == 0)
+		return (order);
+	order.push_back(1);
+	
+	std::size_t	previous = 1;
+	std::size_t	current = 3;
+
+	while (previous < pend_size)
+	{
+		std::size_t	last = current;
+		std::size_t	next;
+
+		if (last > pend_size)
+			last = pend_size;
+		while (last > previous)
+		{
+			order.push_back(last);
+			--last;
+		}
+		next = current + 2 * previous;
+		previous = current;
+		current = next;
+	}
+	return (order);
+}
+
 void	PmergeMe::list(std::string values) {
 
 	std::istringstream	input(values);
 	std::list<Pair>		pairs;
-	Pair				p;
-	int					odd;
-	bool				isOdd = false;
-
-//	PARSEO
-	if (!wrong_input(values))
-	{
-		std::cerr << "Error: input error: only positive intagers as argument" << std::endl;
-		return ;
-	}
-
-	std::clock_t	start = std::clock();
+	Pair			p;
+	int			odd;
+	bool			isOdd = false;
+	std::clock_t		start = std::clock();
 
 	while (input >> p.smaller)
 	{
@@ -138,21 +147,21 @@ void	PmergeMe::list(std::string values) {
 	}
 
 //	ORDEN DE ORDENACION JACOBSTHAL PARA LOS NUMEROS PEQUENOS
-	std::list<int>				order = JacobsthalOrder(pend.size());
+	std::list<int>	jacobs = list_JacobsthalOrder(pend.size());
 
-	for (std::list<int>::iterator orderIt = order.begin();
-			orderIt != order.end(); orderIt++)
+	for (std::list<int>::iterator jacobsIt = jacobs.begin();
+			jacobsIt != jacobs.end(); jacobsIt++)
 	{
 		std::list<Limit>::iterator	pendIt = pend.begin();
 		std::list<int>::iterator	pos = sorted.begin();
 
-		std::advance(pendIt, *orderIt - 1);
+		std::advance(pendIt, *jacobsIt - 1);
+
 		while (pos != pendIt->list_limit && *pos < pendIt->num)
 			pos++;
+
 		sorted.insert(pos, pendIt->num);
 	}
-
-//	ANADE EL NUMERO IMPAR SI LO HAY
 	if (isOdd)
 	{
 		std::list<int>::iterator pos = sorted.begin();
@@ -160,13 +169,14 @@ void	PmergeMe::list(std::string values) {
 			pos++;
 		sorted.insert(pos, odd);
 	}
+
 //	TIME
 	std::clock_t	end = std::clock();
-	double list_time = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+	double		list_time = static_cast<double>(end - start) * 1000000 / CLOCKS_PER_SEC;
 
 //	IMPRIME
-	std::cout << "Before: " << values << "\nAfter:  ";
-	for (std::list<int>::iterator sort_it = sorted.begin(); sort_it != sorted.end(); sort_it++)
+	for (std::list<int>::iterator sort_it = sorted.begin();
+			sort_it != sorted.end(); sort_it++)
 	{
 		std::list<int>::iterator next = sort_it;
 
@@ -174,10 +184,10 @@ void	PmergeMe::list(std::string values) {
 		if (++next != sorted.end())
 			std::cout << " ";
 	}
-	std::cout << std::endl;
 	std::cout
-		<< "Time to process [" << sorted.size()
-		<< "] elements with [std::list]: " << list_time * 1000000
+		<< std::fixed << std::setprecision(2)
+		<< "\n\nTime to process [" << sorted.size()
+		<< "] elements with [std::list]:   " << list_time
 		<< " us" << std::endl;
 }
 
@@ -185,16 +195,11 @@ void	PmergeMe::vector(std::string values) {
 
 	std::istringstream	input(values);
 	std::vector<Pair>	pairs;
-	Pair				p;
-	int					odd;
-	bool				isOdd;
+	Pair			p;
+	int			odd;
+	bool			isOdd = false;
+	std::clock_t		start = std::clock();
 
-//	PARSEO
-	if (!wrong_input(values))
-	{
-		std::cerr << "Error: input error: only positive intagers as argument" << std::endl;
-		return ;
-	}
 	while (input >> p.smaller)
 	{
 		if (input >> p.larger)
@@ -211,9 +216,9 @@ void	PmergeMe::vector(std::string values) {
 	}
 
 //	ORDENACION DE NUMEROS GRANDES
-	for (size_t i = 0; i < pairs.size(); i++)
+	for (std::size_t i = 0; i < pairs.size(); i++)
 	{
-		for (size_t x = 0; x < pairs.size(); x++)
+		for (std::size_t x = 0; x < pairs.size(); x++)
 		{
 			if (x + 1 != pairs.size()
 					&& pairs[x].larger > pairs[x + 1].larger)
@@ -225,7 +230,7 @@ void	PmergeMe::vector(std::string values) {
 	std::vector<int>	sorted;	
 	std::vector<Limit>	pend;
 
-	for (size_t i = 0; i < pairs.size(); i++)
+	for (std::size_t i = 0; i < pairs.size(); i++)
 	{
 		Limit	small;
 
@@ -235,18 +240,69 @@ void	PmergeMe::vector(std::string values) {
 		pend.push_back(small);
 	}
 
+//	ORDEN DE ORDENACION JACOBSTHAL PARA LOS NUMEROS PEQUENOS
+	std::vector<std::size_t>	jacobs = vec_JacobsthalOrder(pend.size());
 
-	for (size_t i = 0; i < pairs.size(); i++)
+	for (std::size_t i = 0; i < jacobs.size(); i++)
 	{
-		std::cout << pairs[i].smaller << " "
-			<< pairs[i].larger << std::endl;
+		std::size_t	pos = 0;
+		std::size_t	 order = jacobs[i] - 1;
+
+		while (pos < pend[order].vec_limit
+				&& sorted[pos] < pend[order].num)
+			pos++;
+
+		sorted.insert(sorted.begin() + pos, pend[order].num);
+
+		for (std::size_t x = 0; x < pend.size(); x++)
+		{
+			if (pend[x].vec_limit >= pos)
+				pend[x].vec_limit++;
+		}
 	}
 	if (isOdd)
-		std::cout << "Odd: " << odd << std::endl;
-	std::cout << std::endl;
-	for (size_t i = 0; i < pend.size(); i++)
 	{
-		std::cout << pend[i].vec_limit << " "
-			<< pend[i].num << std::endl;
+		std::size_t	pos = 0;
+
+		while (pos < sorted.size() && sorted[pos] < odd)
+			pos++;
+		sorted.insert(sorted.begin() + pos, odd);
 	}
+//	TIME
+	std::clock_t	end = std::clock();
+	double		list_time = static_cast<double>(end - start) * 1000000 / CLOCKS_PER_SEC;
+
+//	IMPRESION
+	std::cout
+		<< std::fixed << std::setprecision(2)
+		<< "Time to process [" << sorted.size()
+		<< "] elements with [std::vector]: " << list_time
+		<< " us" << std::endl;
+}
+
+void	PmergeMe::sort_values(std::string values) {
+
+	int	n_count = 0;
+
+	for (std::size_t i = 0; i < values.size(); ++i)
+	{
+		if ((!std::isdigit(values[i]) && values[i] != ' ')
+				|| (values[i] == '0' && !std::isdigit(values[i - 1])))
+		{
+			std::cerr << "Error: input error: only unsigned positive intagers as argument" << std::endl;
+			return ;
+		}
+		if (values[i + 1] == ' ' || i + 1 == values.size())
+			n_count++;
+	}
+	if (n_count <= 1)
+	{
+		std::cerr << "Error: input error: must be at least two positive intagers as argument" << std::endl;
+		return ;
+	}
+
+	std::cout << "\nBefore: " << values << "\nAfter:  ";
+	list(values);
+	vector(values);
+	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/06 11:27:47 by diespino          #+#    #+#             */
-/*   Updated: 2026/10/06 12:42:09 by diespino         ###   ########.fr       */
+/*   Updated: 2026/10/12 19:14:08 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char** argv) {
 
 	if (argc <= 1)
 	{
-		std::cerr << "Error: no args  recived" << std::endl;
+		std::cerr << "Error: input error: empty input" << std::endl;
 		return (1);
 	}
 	else if (argc == 2)
@@ -36,8 +36,8 @@ int	main(int argc, char** argv) {
 				values.push_back(' ');
 		}
 	}
-//	PmMe.list(values);
-	PmMe.vector(values);
+
+	PmMe.sort_values(values);
 
 	return (0);
 }
