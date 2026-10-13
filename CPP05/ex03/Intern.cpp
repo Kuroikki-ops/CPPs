@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 15:58:05 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/17 18:25:01 by diespino         ###   ########.fr       */
+/*   Updated: 2026/10/13 15:18:45 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,21 @@ Intern& Intern::operator=(const Intern& other) {
 
 Intern::~Intern(void) {}
 
+static AForm*  ShrubberyForm(std::string& target) {return (new ShrubberyCreationForm(target));}
+static AForm*  RobotomyForm(std::string& target) {return (new RobotomyRequestForm(target));}
+static AForm*  PresidentialForm(std::string& target) {return (new PresidentialPardonForm(target));}
+
 AForm*	Intern::makeForm(std::string form, std::string target)
 {
-	AForm*	new_form;
-
-	if (form == "ShrubberyCreationForm")
-		new_form = new ShrubberyCreationForm(target);
-	else if (form == "RobotomyRequestForm")
-		new_form = new RobotomyRequestForm(target);
-	else if (form == "PresidentialPardonForm")
-		new_form = new PresidentialPardonForm(target);
-	else
-		throw (AForm::FormNotExist());
+	std::string	form_type[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	AForm*		(*function[3])(std::string&) = {&ShrubberyForm, &RobotomyForm, &PresidentialForm};
+	int		i = 0;
 	
+	while (i < 3 && form != form_type[i])
+		i++;
+	if (i == 3)
+		throw (AForm::FormNotExist());
 	std::cout << "Intern creates " << form << std::endl;
-	return (new_form);
 
+	return (function[i](target));
 }
