@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 12:47:10 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/16 16:05:39 by diespino         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:09:49 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 		<< " executed the " 
 		<< this->getName() << std::endl;
 	std::cout 
-		<< "\n >> Informs that " << this->getTarget() 
+		<< "\nInforms that " << this->getTarget() 
 		<< " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

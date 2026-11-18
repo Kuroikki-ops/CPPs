@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 15:11:24 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/16 14:48:15 by diespino         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:02:28 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ class	Bureaucrat {
 			public:
 				const char* what() const throw();
 		};
-
 		class   GradeTooLowException : public std::exception {
 		
 			public:

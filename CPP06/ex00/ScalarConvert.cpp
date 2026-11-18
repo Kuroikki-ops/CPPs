@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:41:24 by diespino          #+#    #+#             */
-/*   Updated: 2026/09/03 19:15:57 by diespino         ###   ########.fr       */
+/*   Updated: 2026/11/17 16:25:41 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,12 @@ double	ScalarConvert::toDouble(const std::string& literal)
 void	ScalarConvert::convert(const std::string& literal) {
 
 	if (!isValid(literal))
+	{
+		std::cout 
+			<< "Error: invalid literal [" 
+			<< literal << "]"<< std::endl;
 		return ;
+	}
 	if (literal == "nan" || literal == "nanf")
 	{
 		std::cout

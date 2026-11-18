@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:00:21 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/17 16:42:40 by diespino         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:11:48 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,16 @@ class AForm {
 			public:
 				const char* what() const throw();
 		};
-
 		class	GradeTooLowException : public std::exception {
 
 			public:
 				const char* what() const throw();
 		};
-		
 		class	FormNotSigned : public std::exception {
 
 			public:
 				const char* what() const throw();
 		};
-
 		class	FormNotExist : public std::exception {
 		
 			public:

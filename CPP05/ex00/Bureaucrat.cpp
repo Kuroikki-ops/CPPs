@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 15:32:17 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/05 13:49:18 by diespino         ###   ########.fr       */
+/*   Updated: 2026/11/09 17:53:27 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ void	Bureaucrat::decrementGrade(void) {
 
 std::ostream&	operator<<(std::ostream& out, const Bureaucrat& bureau) {
 
-	out << "[" << bureau.getName() << "], bureaucrat grade [" << bureau.getGrade() << "]" << std::endl;
+	out << bureau.getName() << ", bureaucrat grade " << bureau.getGrade() << std::endl;
 	return (out);
 }

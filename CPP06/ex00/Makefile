@@ -6,7 +6,7 @@
 #    By: diespino <diespino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 16:08:48 by diespino          #+#    #+#              #
-#    Updated: 2026/08/19 16:36:19 by diespino         ###   ########.fr        #
+#    Updated: 2026/11/17 15:34:21 by diespino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,15 @@ NAME 		= convert
 # SRCs
 MAIN		= main.cpp
 
-SRC			= ScalarConvert.cpp
+SRC		= ScalarConvert.cpp
 
 OBJS		= $(MAIN:.cpp=.o) $(SRC:.cpp=.o)
 DEPS		= $(MAIN:.cpp=.d) $(SRC:.cpp=.d)
 
 # FLAGs
-CPP	 		= g++
+CPP	 	= g++
 CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
-RM 			=  rm -f
+RM 		=  rm -f
 
 all: $(NAME)
 

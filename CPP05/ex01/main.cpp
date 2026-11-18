@@ -6,7 +6,7 @@
 /*   By: diespino <diespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 18:44:06 by diespino          #+#    #+#             */
-/*   Updated: 2026/06/05 13:46:31 by diespino         ###   ########.fr       */
+/*   Updated: 2026/11/09 17:57:12 by diespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void)
 		std::cout 
 			<< a << "\n\nForm: " << aa 
 			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
-			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() << "]" 
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
 			<< "]\n * Signed [" << aa.getFormStatus() << "]\n" << std::endl;
 
 		a.signForm(aa);
@@ -40,7 +40,7 @@ int	main(void)
 		std::cout 
 			<< "\nForm: " << aa 
 			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
-			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() << "]" 
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() 
 			<< "]\n * Signed [" << aa.getFormStatus() << "]\n" << std::endl;
 
 		std::cout << "------------------------------\n" << std::endl;
@@ -48,7 +48,7 @@ int	main(void)
 		std::cout 
 			<< b << "\n\nForm: " << bb 
 			<< "\n\n * Sign Grade: [" << bb.getGradeValue()
-			<< "]\n * Exec. Grade: [" << bb.getExecuteValue() << "]"
+			<< "]\n * Exec. Grade: [" << bb.getExecuteValue()
 			<< "]\n * Signed: [" << bb.getFormStatus() << "]\n" << std::endl;
 
 		b.signForm(bb);
@@ -56,7 +56,7 @@ int	main(void)
 		std::cout 
 			<< "\nForm: " << bb 
 			<< "\n\n * Sign Grade: [" << bb.getGradeValue()
-			<< "]\n * Exec. Grade: [" << bb.getExecuteValue() << "]"
+			<< "]\n * Exec. Grade: [" << bb.getExecuteValue()
 			<< "]\n * Signed: [" << bb.getFormStatus() << "]\n" << std::endl;
 
 		std::cout << "------------------------------\n" << std::endl;
@@ -64,7 +64,7 @@ int	main(void)
 		std::cout 
 			<< c << "\n\nForm " << cc 
 			<< "\n\n * Sign Grade: [" << cc.getGradeValue()
-			<< "]\n * Exec. Grade: [" << cc.getExecuteValue() << "]"
+			<< "]\n * Exec. Grade: [" << cc.getExecuteValue()
 			<< "]\n * Signed: [" << cc.getFormStatus() << "]\n" << std::endl;
 
 		c.signForm(cc);
@@ -72,7 +72,7 @@ int	main(void)
 		std::cout 
 			<< "\nForm " << cc 
 			<< "\n\n * Sign Grade: [" << cc.getGradeValue()
-			<< "]\n * Exec. Grade: [" << cc.getExecuteValue() << "]"
+			<< "]\n * Exec. Grade: [" << cc.getExecuteValue()
 			<< "]\n * Signed: [" << cc.getFormStatus() << "]\n" << std::endl;
 	}
 	catch (std::exception& e) {std::cout << e.what() << std::endl;}
@@ -177,19 +177,19 @@ int	main(void)
 		std::cout 
 			<< "\nForm " << aa 
 			<< "\n\n * Sign Grade: [" << aa.getGradeValue()
-			<< "]\n * Exec. Grade: [" << aa.getExecuteValue() << "]"
+			<< "]\n * Exec. Grade: [" << aa.getExecuteValue()
 			<< "]\n * Signed: [" << aa.getFormStatus() << "]\n" << std::endl;
 
 		std::cout 
 			<< "\nForm " << bb
 			<< "\n\n * Sign Grade: [" << bb.getGradeValue()
-			<< "]\n * Exec. Grade: [" << bb.getExecuteValue() << "]"
+			<< "]\n * Exec. Grade: [" << bb.getExecuteValue()
 			<< "]\n * Signed: [" << bb.getFormStatus() << "]\n" << std::endl;
 		
 		std::cout 
 			<< "\nForm " << cc 
 			<< "\n\n * Sign Grade: [" << cc.getGradeValue()
-			<< "]\n * Exec. Grade: [" << cc.getExecuteValue() << "]"
+			<< "]\n * Exec. Grade: [" << cc.getExecuteValue()
 			<< "]\n * Signed: [" << cc.getFormStatus() << "]\n" << std::endl;
 	}
 	catch (std::exception& e) {std::cout << e.what() << std::endl;}
